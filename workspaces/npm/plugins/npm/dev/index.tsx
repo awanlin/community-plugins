@@ -18,11 +18,7 @@ import { createDevApp } from '@backstage/dev-utils';
 import { EntityProvider } from '@backstage/plugin-catalog-react';
 import { Content, Header, Page } from '@backstage/core-components';
 import { Grid } from '@material-ui/core';
-import {
-  npmPlugin,
-  EntityNpmInfoCard,
-  EntityNpmReleaseTableCard,
-} from '../src/plugin';
+import { npmPlugin, NpmInfoCard, NpmReleaseTableCard } from '../src/plugin';
 
 const mockEntity = {
   apiVersion: 'backstage.io/v1alpha1',
@@ -50,10 +46,10 @@ createDevApp()
           <EntityProvider entity={mockEntity}>
             <Grid container>
               <Grid item xs={8}>
-                <EntityNpmReleaseTableCard />
+                <NpmReleaseTableCard />
               </Grid>
               <Grid item xs={4}>
-                <EntityNpmInfoCard />
+                <NpmInfoCard />
               </Grid>
             </Grid>
           </EntityProvider>

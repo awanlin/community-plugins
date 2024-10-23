@@ -33,12 +33,12 @@ export const npmPlugin = createPlugin({
 });
 
 /**
- * Page content for the catalog (entiy page) that shows two tables.
+ * Page content for the catalog (entity page) that shows two tables.
  * One for the latest tags and versions of a npm package.
  * And another one for the complete version history.
  *  @public
  */
-export const EntityNpmReleaseTableCard = npmPlugin.provide(
+export const NpmReleaseTableCard = npmPlugin.provide(
   createComponentExtension({
     name: 'EntityNpmReleaseTableCard',
     component: {
@@ -58,7 +58,7 @@ export const EntityNpmReleaseTableCard = npmPlugin.provide(
  *
  * @public
  */
-export const EntityNpmInfoCard = npmPlugin.provide(
+export const NpmInfoCard = npmPlugin.provide(
   createComponentExtension({
     name: 'EntityNpmInfoCard',
     component: {
@@ -73,7 +73,7 @@ export const EntityNpmInfoCard = npmPlugin.provide(
  *
  * @public
  */
-export const EntityNpmReleaseOverviewCard = npmPlugin.provide(
+export const NpmReleaseOverviewCard = npmPlugin.provide(
   createComponentExtension({
     name: 'EntityNpmReleaseOverviewCard',
     component: {

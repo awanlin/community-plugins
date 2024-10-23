@@ -14,23 +14,26 @@
  * limitations under the License.
  */
 
-/**
- * A Backstage plugin that shows meta info and latest versions from a npm registry
- *
- * @packageDocumentation
- */
-
-export {
-  npmPlugin,
+import {
   NpmInfoCard,
   NpmReleaseOverviewCard,
   NpmReleaseTableCard,
 } from './plugin';
 
-export { isNpmAvailable } from './utils/isNpmAvailable';
+/**
+ * @public
+ * @deprecated Import `NpmInfoCard` instead
+ */
+export const EntityNpmInfoCard = NpmInfoCard;
 
-export {
-  EntityNpmInfoCard,
-  EntityNpmReleaseOverviewCard,
-  EntityNpmReleaseTableCard,
-} from './deprecated';
+/**
+ * @public
+ * @deprecated Import `NpmReleaseOverviewCard` instead
+ */
+export const EntityNpmReleaseOverviewCard = NpmReleaseOverviewCard;
+
+/**
+ * @public
+ * @deprecated Import `NpmReleaseTableCard` instead
+ */
+export const EntityNpmReleaseTableCard = NpmReleaseTableCard;

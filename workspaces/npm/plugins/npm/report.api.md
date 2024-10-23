@@ -10,17 +10,20 @@ import { Entity } from '@backstage/catalog-model';
 import { JSX as JSX_2 } from 'react';
 import { RouteRef } from '@backstage/core-plugin-api';
 
-// @public
+// @public @deprecated (undocumented)
 export const EntityNpmInfoCard: () => JSX_2.Element;
 
-// @public
+// @public @deprecated (undocumented)
 export const EntityNpmReleaseOverviewCard: () => JSX_2.Element;
 
-// @public
+// @public @deprecated (undocumented)
 export const EntityNpmReleaseTableCard: () => JSX_2.Element;
 
 // @public
 export const isNpmAvailable: (entity: Entity) => boolean;
+
+// @public
+export const NpmInfoCard: () => JSX_2.Element;
 
 // @public
 export const npmPlugin: BackstagePlugin<
@@ -30,4 +33,10 @@ export const npmPlugin: BackstagePlugin<
   {},
   {}
 >;
+
+// @public
+export const NpmReleaseOverviewCard: () => JSX_2.Element;
+
+// @public
+export const NpmReleaseTableCard: () => JSX_2.Element;
 ```
