@@ -75,6 +75,12 @@ describe('createRouter', () => {
 
   const databases = TestDatabases.create();
 
+  const discovery = mockServices.discovery.mock({
+    getExternalBaseUrl: jest
+      .fn()
+      .mockResolvedValue('http://127.0.0.1/api/badges'),
+  });
+
   beforeAll(async () => {
     const knex = await databases.init('SQLITE_3');
     const getClient = jest.fn(async () => knex);
@@ -115,7 +121,7 @@ describe('createRouter', () => {
       badgeBuilder,
       catalog: catalog as Partial<CatalogApi> as CatalogApi,
       config,
-      discovery: mockServices.discovery.mock(),
+      discovery,
       logger: mockServices.logger.mock(),
       auth: mockServices.auth(),
       httpAuth: mockServices.httpAuth.mock(),
@@ -135,7 +141,7 @@ describe('createRouter', () => {
       badgeBuilder,
       catalog: catalog as Partial<CatalogApi> as CatalogApi,
       config,
-      discovery: mockServices.discovery.mock(),
+      discovery,
       logger: mockServices.logger.mock(),
       badgeStore: badgeStore,
       auth: mockServices.auth(),
@@ -166,7 +172,9 @@ describe('createRouter', () => {
           kind: 'component',
           name: 'test',
         },
-        { token: '' },
+        {
+          token: 'mock-service-token:{"sub":"plugin:test","target":"catalog"}',
+        },
       );
 
       expect(badgeBuilder.getBadges).toHaveBeenCalledTimes(1);
@@ -204,7 +212,10 @@ describe('createRouter', () => {
             kind: 'component',
             name: 'test',
           },
-          { token: '' },
+          {
+            token:
+              'mock-service-token:{"sub":"plugin:test","target":"catalog"}',
+          },
         );
 
         expect(badgeBuilder.getBadges).toHaveBeenCalledTimes(0);
