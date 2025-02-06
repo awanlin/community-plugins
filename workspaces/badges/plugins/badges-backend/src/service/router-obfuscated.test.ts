@@ -124,7 +124,9 @@ describe('createRouter', () => {
       discovery: mockServices.discovery.mock(),
       logger: mockServices.logger.mock(),
       auth: mockServices.auth(),
-      httpAuth: mockServices.httpAuth.mock(),
+      httpAuth: mockServices.httpAuth({
+        defaultCredentials: mockCredentials.service(),
+      }),
       database: mockServices.database.mock({ getClient }),
     });
     app = express().use(router);
@@ -225,10 +227,8 @@ describe('createRouter', () => {
       expect(catalog.getEntityByRef).toHaveBeenCalledWith(
         { namespace: 'default', kind: 'component', name: 'test' },
         {
-          token: mockCredentials.service.token({
-            onBehalfOf: mockCredentials.user(),
-            targetPluginId: 'catalog',
-          }),
+          token:
+            'mock-service-token:{"sub":"external:test-service","target":"catalog"}',
         },
       );
 
