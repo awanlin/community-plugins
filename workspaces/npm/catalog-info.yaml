@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: internal-npm
+  title: '@internal/npm'
+  description: >-
+    A Backstage plugin that shows meta info and latest versions from a npm
+    registry
+spec:
+  lifecycle: experimental
+  type: backstage-workspace
+  owner: '@christoph-jerolimov'

@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: internal-microsoft-calendar
+  title: '@internal/microsoft-calendar'
+spec:
+  lifecycle: experimental
+  type: backstage-workspace
+  owner: '@backstage/community-plugins-maintainers'

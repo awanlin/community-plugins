@@ -1,9 +1,9 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: internal-bitbucket-pull-requests
-  title: '@internal/bitbucket-pull-requests'
+  name: internal-gcalendar
+  title: '@internal/gcalendar'
 spec:
   lifecycle: experimental
   type: backstage-workspace
-  owner: '@mbruhin'
+  owner: '@backstage/community-plugins-maintainers'

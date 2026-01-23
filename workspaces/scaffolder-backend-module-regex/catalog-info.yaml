@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: internal-scaffolder-backend-module-regex
+  title: '@internal/scaffolder-backend-module-regex'
+spec:
+  lifecycle: experimental
+  type: backstage-workspace
+  owner: '@AndrienkoAleksandr'

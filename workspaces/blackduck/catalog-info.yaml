@@ -1,9 +1,9 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: internal-bitbucket-pull-requests
-  title: '@internal/bitbucket-pull-requests'
+  name: internal-blackduck
+  title: '@internal/blackduck'
 spec:
   lifecycle: experimental
   type: backstage-workspace
-  owner: '@mbruhin'
+  owner: '@deepan10'

@@ -1,9 +1,9 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: internal-bitbucket-pull-requests
-  title: '@internal/bitbucket-pull-requests'
+  name: internal-nexus-repository-manager
+  title: '@internal/nexus-repository-manager'
 spec:
   lifecycle: experimental
   type: backstage-workspace
-  owner: '@mbruhin'
+  owner: '@christoph-jerolimov'
