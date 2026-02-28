@@ -38,7 +38,3 @@
   margin-right: var(--bui-space-1);
   display: inline-block;
 }
-
-.label {
-  color: inherit;
-}

@@ -15,6 +15,7 @@
  */
 
 import {
+  Alert,
   Box,
   Text,
   TooltipTrigger,
@@ -25,9 +26,9 @@ import {
   Card,
   CardHeader,
   CardBody,
+  CardFooter,
   Skeleton,
 } from '@backstage/ui';
-import Alert from '@material-ui/lab/Alert';
 import { DateTime } from 'luxon';
 import slugify from 'slugify';
 import { useEntity } from '@backstage/plugin-catalog-react';
@@ -56,7 +57,7 @@ export const LinguistCard = () => {
       </Card>
     );
   } else if (error) {
-    return <Alert severity="error">{error.message}</Alert>;
+    return <Alert status="danger" title={error.message} />;
   }
 
   if (items && items.languageCount === 0 && items.totalBytes === 0) {
@@ -129,11 +130,11 @@ export const LinguistCard = () => {
           </TagGroup>
         </Flex>
       </CardBody>
-      <CardHeader>
+      <CardFooter>
         <Text as="p" variant="body-small" color="secondary">
           Generated {DateTime.fromISO(processedDate).toRelative()}
         </Text>
-      </CardHeader>
+      </CardFooter>
     </Card>
   ) : (
     <></>
