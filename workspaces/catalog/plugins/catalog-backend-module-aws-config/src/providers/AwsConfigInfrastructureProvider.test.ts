@@ -397,7 +397,7 @@ describe('AwsConfigInfrastructureProvider', () => {
 
     const result = await provider.next({}, undefined);
 
-    expect(result.entities[0].entity.metadata.name).toMatch(/^[a-f0-9]{63}$/);
+    expect(result.entities![0].entity.metadata.name).toMatch(/^[a-f0-9]{63}$/);
   });
 
   // eslint-disable-next-line jest/expect-expect
