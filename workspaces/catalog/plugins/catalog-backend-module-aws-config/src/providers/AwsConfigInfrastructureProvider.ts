@@ -132,7 +132,9 @@ export class AwsConfigInfrastructureProvider
 
     let entities: Entity[] = [];
 
-    let response: SelectResourceConfigCommandOutput;
+    let response:
+      | SelectResourceConfigCommandOutput
+      | SelectAggregateResourceConfigCommandOutput;
 
     // TODO: Aggregator option
     if (this.config.aggregator) {
@@ -190,7 +192,9 @@ export class AwsConfigInfrastructureProvider
   }
 
   parseResponse(
-    response: SelectAggregateResourceConfigCommandOutput,
+    response:
+      | SelectResourceConfigCommandOutput
+      | SelectAggregateResourceConfigCommandOutput,
   ): AwsConfigResource[] {
     return (
       response.Results?.map(result => {
